@@ -1,0 +1,6 @@
+@TransactionsApp.Server_HostAddress = http://localhost:5010
+
+GET {{TransactionsApp.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
