@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "client", "transactionsapp.client\client.esproj", "{CC52806F-34C2-2E92-0FBA-4FABCAD9E6EC}"
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "transactionsapp.client", "transactionsapp.client\transactionsapp.client.esproj", "{CC52806F-34C2-2E92-0FBA-4FABCAD9E6EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "server", "TransactionsApp.Server\server.csproj", "{05033F62-5266-46B1-ACDF-79F5470BCF24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionsApp.Server", "TransactionsApp.Server\TransactionsApp.Server.csproj", "{05033F62-5266-46B1-ACDF-79F5470BCF24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
