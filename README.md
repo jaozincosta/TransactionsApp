@@ -1,65 +1,110 @@
-Tecnologias Utilizadas
-Backend (.NET Core C#)
-✅ .NET Core 7+
-✅ Dapper (Acesso ao banco de dados)
-✅ CQRS (Separação de leitura e escrita)
-✅ Oracle Database (Armazenamento de dados)
-✅ FluentValidation (Validação de dados)
-✅ XUnit (Testes unitários)
-Frontend (React + TypeScript)
-✅ React 18+
-✅ React Router Dom (Roteamento)
-✅ Styled Components (Estilização)
-✅ Axios (Requisições HTTP)
-✅ WebSockets (Atualização em tempo real)
-✅ Context API (Gerenciamento de estado)
+# TransactionsApp
 
-Configuração & Execução
-Backend
-Clone o repositório
-git clone https://github.com/seu-usuario/TransactionsApp
-cd projeto/backend
+Uma aplicação full stack para gerenciamento e visualização de transações, com integração de preços em tempo real da Binance via WebSocket.
 
-Configurar o banco de dados (MySQL)
-No arquivo appsettings.json, configure a conexão com Oracle:
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Server=seu-server;Database=transactionsdb;User=root;Password=sua-senha;"
-  }
-}
+## Visão Geral
 
-Restaurar pacotes e rodar a API
-dotnet restore
-dotnet run
-Testar a API no Swagger
-Acesse: http://localhost:5010/swagger
+Este projeto é dividido em duas partes:
 
-Rodar os testes unitários
-dotnet test
+- **Backend (.NET Core + Dapper + Oracle):** CRUD de transações com validações e acesso via Dapper, seguindo padrões CQRS.
+- **Frontend (React + Vite + TypeScript):** Interface moderna para consultar transações e monitorar ativos da Binance em tempo real.
 
-Frontend
-Acesse a pasta do frontend
-cd ../frontend
+---
 
-Instale as dependências
-npm install
-Inicie o servidor
-npm run dev
-Acesse: http://localhost:55727
-Rodar os testes
-npm test
+## Estrutura do Projeto
+```bash
+TransactionsApp/
+├── transactionsapp.client/ # Frontend React
+└── transactionsapp.server/ # Backend .NET Core
+```
+---
 
-Funcionalidades
-Backend (API de Transações)
-✅ Criar transações (POST /api/transactions)
-✅ Listar todas as transações (GET /api/transactions)
-✅ Buscar por ID (GET /api/transactions/{id})
-✅ Atualizar uma transação (PUT /api/transactions/{id})
-✅ Deletar uma transação (DELETE /api/transactions/{id})
+## Como Rodar o Projeto
 
-Frontend (Binance WebSocket Tracker)
-✅ Buscar símbolos da Binance (GET https://api.binance.com/api/v3/exchangeInfo)
-✅ Adicionar símbolos à Watchlist
-✅ Atualização em tempo real via WebSockets
-✅ Exibir último preço, best bid, best ask e variação %
-✅ Interface responsiva
+### Pré-requisitos
+
+- [.NET 6+](https://dotnet.microsoft.com/download)
+- [Node.js + npm](https://nodejs.org/)
+- Banco Oracle configurado e acessível (pode usar Oracle Cloud Free Tier ou Local)
+
+---
+
+### 1. Backend (.NET + Oracle)
+
+1. Acesse a pasta do backend:
+   ```sh
+   cd transactionsapp.server
+ 
+2. Configure a string de conexão do Oracle no appsettings.json:
+    ```sh
+      {  
+        "ConnectionStrings": {
+        "DefaultConnection": "User Id=SEU_USUARIO;Password=SUA_SENHA;Data Source=SEU_SERVIDOR"
+        }
+      }
+
+3. Execute o projeto:
+    ```sh
+    dotnet run
+
+4. Acesse o Swagger:
+   ```sh
+    http://localhost:5010/swagger
+
+### 2. Frontend (React + Vite)
+
+1. Acesse a pasta do frontend:
+  ```sh
+    cd transactionsapp.client
+  ```
+2. Instale as dependências:
+   ```sh
+    npm install
+   ```
+
+3. Rode o servidor:
+  ```sh
+  npm run dev
+  ```
+
+4. Acesse:
+  ```sh
+  https://localhost:55727
+  ```  
+
+## Funcionalidades
+### Transações (Back e Front)
+
+- GET /api/transactions – Listar todas
+- GET /api/transactions/{id} – Buscar por ID
+- POST /api/transactions – Criar nova 
+- PUT /api/transactions/{id} – Atualizar
+- DELETE /api/transactions/{id} – Remover
+
+### Binance Tracker (Frontend)
+- Busca de pares via API REST
+- Seleção de ativos
+- Visualização em tempo real:
+   - Último preço (lastPrice)
+   - Melhor bid/ask
+   - Variação percentual (%)
+
+## Tecnologias Utilizadas
+### Backend
+- .NET 6
+- Dapper
+- Oracle Database
+- Swagger (Swashbuckle)
+- CQRS Pattern
+
+### Frontend
+- React 18
+- Vite
+- Styled-components
+- WebSocket API Binance
+- TypeScrip
+
+## Exemplo de Tela
+- Listagem de transações
+- Monitoramento ao vivo de ativos como ETHBTC, BNBBTC
+- Responsivo
