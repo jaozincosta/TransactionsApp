@@ -18,6 +18,11 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"
+      },
+      "spa": {
+        "useProxy": false,
+        "sourcePath": "transactionsapp.client",
+        "npmScript": "dev"
       }
     },
     "https": {
@@ -29,6 +34,11 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"
+      },
+      "spa": {
+        "useProxy": false,
+        "sourcePath": "transactionsapp.client",
+        "npmScript": "dev"
       }
     },
     "IIS Express": {
@@ -42,4 +52,3 @@
     }
   }
 }
-

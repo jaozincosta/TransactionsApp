@@ -4,7 +4,7 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "strict": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
@@ -13,17 +13,31 @@
     "isolatedModules": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": [ "src/*" ]
+      "@/*": [
+        "src/*"
+      ]
     },
     "allowJs": true,
     "noImplicitAny": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
-    "noEmit": true, 
-    "strictNullChecks": true, 
-    "strictFunctionTypes": true, 
-    "allowUnreachableCode": false 
+    "noEmit": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "allowUnreachableCode": false,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "incremental": true
   },
-  "include": [ "src" ],
-  "exclude": [ "node_modules", "dist", "build" ]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build"
+  ]
 }

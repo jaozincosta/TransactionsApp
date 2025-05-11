@@ -75,7 +75,6 @@ const BinancePage: React.FC = () => {
     const [search, setSearch] = useState("");
     const [watchlist, setWatchlist] = useState<string[]>([]);
 
-    // 🔹 Obtendo os símbolos disponíveis na Binance
     useEffect(() => {
         const fetchSymbols = async () => {
             try {
@@ -91,7 +90,6 @@ const BinancePage: React.FC = () => {
         fetchSymbols();
     }, []);
 
-    // 🔹 Manipula a adição e remoção de símbolos na Watchlist
     const toggleSymbol = (symbol: string) => {
         setWatchlist((prev) =>
             prev.includes(symbol)
@@ -102,7 +100,6 @@ const BinancePage: React.FC = () => {
 
     return (
         <Container>
-            {/* 🔹 Painel Esquerdo: Lista de Símbolos */}
             <Panel>
                 <Title>Available Symbols</Title>
                 <SearchInput
@@ -128,7 +125,6 @@ const BinancePage: React.FC = () => {
                 <Button onClick={() => console.log("Watchlist Atualizada:", watchlist)}>Update List</Button>
             </Panel>
 
-            {/* 🔹 Painel Direito: Watchlist */}
             <Panel>
                 <Watchlist symbols={watchlist} onRemoveSymbol={toggleSymbol} />
             </Panel>

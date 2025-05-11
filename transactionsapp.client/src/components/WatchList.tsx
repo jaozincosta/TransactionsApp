@@ -32,7 +32,6 @@ interface PriceData {
 const Watchlist: React.FC<WatchlistProps> = ({ symbols, onRemoveSymbol }) => {
     const [prices, setPrices] = useState<{ [key: string]: PriceData }>({});
 
-    // 🔹 Conectando ao WebSocket da Binance para atualização em tempo real
     useEffect(() => {
         if (symbols.length === 0) return;
 
@@ -41,7 +40,7 @@ const Watchlist: React.FC<WatchlistProps> = ({ symbols, onRemoveSymbol }) => {
 
         ws.onmessage = (event) => {
             const data = JSON.parse(event.data);
-            console.log("📢 Dados recebidos do WebSocket:", data);
+            console.log("Dados recebidos do WebSocket:", data);
 
             setPrices((prevPrices) => ({
                 ...prevPrices,

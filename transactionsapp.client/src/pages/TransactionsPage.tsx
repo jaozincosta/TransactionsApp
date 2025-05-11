@@ -3,7 +3,7 @@ import { getTransactions } from "../services/transactionsService";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-// 🔹 Estilização
+
 const Container = styled.div`
     max-width: 800px;
     margin: auto;
@@ -96,7 +96,6 @@ const TransactionsPage: React.FC = () => {
                 </tbody>
             </Table>
 
-            {/* 🔹 Botão para navegar até a página Binance */}
             <Link to="/binance">
                 <Button>Ir para Binance</Button>
             </Link>
